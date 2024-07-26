@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist", // here `dist` is the build folder of your project
+    "deploy": "gh-pages -d dist",
     "postdeploy": "echo 'Deployment complete!'",
     "dev": "vite",
     "build": "vite build",

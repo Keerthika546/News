@@ -1,6 +1,4 @@
-    - name: Deploy to Netlify
-      run: |
-        npm install -g netlify-cli
-        netlify deploy --prod --dir=build --site=your-site-id
-      env:
-        NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+[[redirects]]
+from="/*"
+to="/index.html"
+status=200

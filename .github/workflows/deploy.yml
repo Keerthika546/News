@@ -3,7 +3,7 @@ name: Deploy React App
 on:
   push:
     branches:
-      - main  # Trigger the workflow on pushes to the main branch
+      - main
 
 jobs:
   build-and-deploy:
@@ -16,17 +16,25 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '18'  # Specify the Node.js version
+        node-version: '20' # Specify the Node.js version you want to use
 
     - name: Install dependencies
       run: npm install
 
-    - name: Build React app
+    - name: Build the app
       run: npm run build
 
     - name: Deploy
       run: |
-        echo "Deploy step here"
-        # Add your deployment script or commands here
-        # For example, if deploying to a hosting service like Vercel or Netlify, add the respective CLI commands here
-        # Or you might want to upload the build artifacts to a server
+        # Add deployment commands here. For example:
+        # Deploy to a static file hosting service or a cloud provider
+        echo "Deploying the app..."
+        # Example: rsync -r build/ user@server:/path/to/deploy/
+        # or use a deployment action if available
+
+    - name: Verify deployment
+      run: |
+        # Optional: Add commands to verify the deployment
+        echo "Verifying deployment..."
+        # Example: curl -I https://your-deployed-app-url.com
+        
